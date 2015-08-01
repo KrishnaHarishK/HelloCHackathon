@@ -2,7 +2,7 @@
 applications:
 - name: HelloHackathon
   buildpack: https://github.com/ryandotsmith/null-buildpack.git
-  command: ./HelloHackathon.sh -p $PORT
+  command: ./HelloHackathon.sh
   memory: 1024M
   host: CM
   no-route: true
