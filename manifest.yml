@@ -1,9 +1,7 @@
 ---
 applications:
 - name: HelloHackathon
-  buildpack: https://github.com/ryandotsmith/null-buildpack.git
-  command: ./HelloHackathon.sh
+  buildpack: https://github.com/cloudfoundry/binary-buildpack
+  command: null
   memory: 1024M
-  host: CM
   no-route: true
-  port: 10010
