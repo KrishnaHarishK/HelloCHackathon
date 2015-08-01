@@ -6,3 +6,4 @@ applications:
   memory: 1024M
   host: CM
   no-route: true
+  port: 10010
