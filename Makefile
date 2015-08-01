@@ -5,7 +5,7 @@ SOURCE_TARGETS1 =                \
     HelloHackathon.o
 
 SOURCE_TARGETS2 =                \
-    HelloHackathon_Test.o
+    HelloHackathon_test.o
 
 # If you need valgrind, you need this:
 #    -lglib-2.0
