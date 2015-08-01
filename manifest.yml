@@ -1,6 +1,6 @@
 ---
 applications:
-- name: CompareRecords
+- name: HelloHackathon
   buildpack: https://github.com/cloudfoundry/binary-buildpack
   command: null
   memory: 1024M

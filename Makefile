@@ -13,7 +13,7 @@ SOURCE_TARGETS1 = \
 SOURCE_TARGETS2 = \
 	HelloHackathon_test.o
 
-END_TARGET1 = CompareRecords
+END_TARGET1 = ./HelloHackathon.sh
 END_TARGET2 = test
 
 include app.mak
