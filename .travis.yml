@@ -1,6 +1,6 @@
 language: cpp
 sudo: required
-install: autoconf && make HelloHackathon
+install: autoconf
 compiler:
   - clang
   - gcc
