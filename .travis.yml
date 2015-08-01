@@ -1,6 +1,6 @@
 language: cpp
 sudo: required
-install: make get-deps
+install: make HelloHackathon
 script: scons
 compiler: clang gcc
 deploy:
