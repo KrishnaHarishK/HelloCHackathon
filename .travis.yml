@@ -1,9 +1,7 @@
 language: cpp
 sudo: required
 install: autoconf
-compiler:
-  - clang
-  - gcc
+compiler: gcc
 deploy:
   edge: true
   provider: cloudfoundry
