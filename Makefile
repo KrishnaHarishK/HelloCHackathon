@@ -21,9 +21,6 @@ EXTRA_CFLAGS            = -ggdb3 -O2
 EXTRA_CXXLDFLAGS        = --fatal-warnings
 EXTRA_CLDFLAGS          = --fatal-warnings
 
-tags:  $(SOURCE_TARGETS) $(TARGET_LIBS)
-	mkctags
-
 $(END_TARGET): $(SOURCE_TARGETS) $(TARGET_LIBS)
 	@/bin/echo "";
 	$(CXX) $(LDFLAGS) $(DEFINES) -z muldefs -o $(END_TARGET) $(SOURCE_TARGETS) 2>&1 | tee -a error.lst
