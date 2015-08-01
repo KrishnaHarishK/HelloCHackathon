@@ -1,6 +1,8 @@
 #include"CompareRecordApp.hh"
 
-#include<string>
+#include<cstring>
+#include<iostream>
+#include<cstdio>
 #include<sstream>
 #include<cstdlib>
 #include <errno.h>
