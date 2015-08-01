@@ -1,7 +1,7 @@
 
 MAKEFLAGS= --no-print-directory
 
-DEPEND_KLUDGE=$(shell ls Depend 2>&1 | awk '/No such/ {print "${DEVBASE}/include/blank.mak"} /^Depend$$/ {print "Depend"}')
+DEPEND_KLUDGE=$(shell ls Depend 2>&1 | awk '/No such/ {print "blank.mak"} /^Depend$$/ {print "Depend"}')
 
 OBJ_DIR     = obj
 SPLINT_DIR  = splint
