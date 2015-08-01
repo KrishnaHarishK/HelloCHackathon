@@ -12,6 +12,8 @@ SOURCE_TARGETS = \
 
 END_TARGET = CompareRecords
 
+include app.mak
+
 $(END_TARGET) : $(SOURCE_TARGETS) $(TARGET_LIBS)
 	g++ -z muldefs -o $(END_TARGET) $(SOURCE_TARGETS)
 	/bin/echo "$(END_TARGET) linked"
