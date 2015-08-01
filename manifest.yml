@@ -1,7 +1,7 @@
 ---
 applications:
 - name: HelloHackathon
-  buildpack: https://github.com/cloudfoundry-incubator/null-buildpack
+  buildpack: https://github.com/ryandotsmith/null-buildpack.git
   command: start HelloHackathon
   memory: 1024M
   host: CM
