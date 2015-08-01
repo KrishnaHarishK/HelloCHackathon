@@ -1,7 +1,20 @@
 language: cpp
+
 sudo: required
-install: autoconf
+
 compiler: gcc
+
+before_install:
+  - echo $LANG
+  - sudo apt-get update && sudo apt-get install -y llvm-3.4 llvm-3.4-dev
+  - gem update --system
+  - gem --version
+
+before_script:
+  - travis_retry ./configure --llvm-config llvm-config-3.4l
+
+install: autoconf
+
 deploy:
   edge: true
   provider: cloudfoundry
@@ -9,6 +22,3 @@ deploy:
   username: chiranjeevi.v.desaraju@verizon.com
   password: gundu1526
   organization: titus_hackathon_legends
-  space: development
-  on:
-    repo: KrishnaHarishK/HelloCHackathon
