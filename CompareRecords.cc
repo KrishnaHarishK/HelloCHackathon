@@ -7,28 +7,16 @@
 
 #define COMPARE_APP_STANDARD_DISPLAY_COUNT 10
 
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
-/*
-int main(void)
-{
-  for(int i = 0; true; i++)
-  {
-    std::string tString = std::itoa(i);
-  }
-}
-*/
-
 
 int
 main(int argc, char ** argv)
 {
-  long tNumDisplay = COMPARE_APP_STANDARD_DISPLAY_COUNT;
-
   while (1)
   {
     sleep (10);
   }
+
+  long tNumDisplay = COMPARE_APP_STANDARD_DISPLAY_COUNT;
 
   // validate args and pass to app
     switch (argc){
