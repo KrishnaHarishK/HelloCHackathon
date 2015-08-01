@@ -1,0 +1,5 @@
+---
+applications:
+- name: HelloHackathon
+  memory: 1024M
+  host: CM
