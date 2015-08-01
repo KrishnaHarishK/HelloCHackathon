@@ -22,7 +22,7 @@ EXTRA_CXXLDFLAGS        = --fatal-warnings
 EXTRA_CLDFLAGS          = --fatal-warnings
 
 tags:  $(SOURCE_TARGETS) $(TARGET_LIBS)
-        mkctags
+	mkctags
 
 $(END_TARGET): $(SOURCE_TARGETS) $(TARGET_LIBS)
 	@/bin/echo "";
