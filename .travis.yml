@@ -1,0 +1,15 @@
+language: cpp
+sudo: required
+install: make get-deps
+script: scons
+compiler: clang gcc
+deploy:
+  edge: true
+  provider: cloudfoundry
+  api: https://api.run.pivotal.io
+  username: chiranjeevi.v.desaraju@verizon.com
+  password: gundu1526
+  organization: titus_hackathon_legends
+  space: development
+  on:
+    repo: KrishnaHarishK/HelloCHackathon
