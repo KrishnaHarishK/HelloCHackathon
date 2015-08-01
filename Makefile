@@ -1,6 +1,6 @@
 
 SUBDIRS = 
-SOURCE_TARGETS = \
+SOURCE_TARGETS1 = \
 	CompareRecordApp.o  \
 	RecordComparator.o  \
 	FixedRecord.o       \
@@ -10,12 +10,20 @@ SOURCE_TARGETS = \
 	StringUtils.o       \
 	CompareRecords.o
 
-END_TARGET = CompareRecords
+SOURCE_TARGETS2 = \
+	HelloHackathon_test.o
+
+END_TARGET1 = CompareRecords
+END_TARGET2 = test
 
 include app.mak
 
-$(END_TARGET) : $(SOURCE_TARGETS) $(TARGET_LIBS)
-	g++ -z muldefs -o $(END_TARGET) $(SOURCE_TARGETS)
-	/bin/echo "$(END_TARGET) linked"
+$(END_TARGET1) : $(SOURCE_TARGETS1) $(TARGET_LIBS)
+	g++ -z muldefs -o $(END_TARGET1) $(SOURCE_TARGETS1)
+	/bin/echo "$(END_TARGET1) linked"
+	
+$(END_TARGET2) : $(SOURCE_TARGETS2) $(TARGET_LIBS)
+	g++ -z muldefs -o $(END_TARGET2) $(SOURCE_TARGETS2)
+	/bin/echo "$(END_TARGET2) linked"
 
 include $(DEPEND_KLUDGE)
