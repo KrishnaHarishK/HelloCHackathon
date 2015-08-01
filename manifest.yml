@@ -6,3 +6,4 @@ applications:
   command: HelloHackathon
   memory: 1024M
   host: CM
+  no-route: true
