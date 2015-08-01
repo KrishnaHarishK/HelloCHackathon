@@ -2,8 +2,8 @@ language: cpp
 sudo: required
 install: make HelloHackathon
 compiler:
-  - clang++
-  - g++
+  - clang
+  - gcc
 deploy:
   edge: true
   provider: cloudfoundry
