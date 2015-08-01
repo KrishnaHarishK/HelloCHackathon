@@ -2,5 +2,6 @@
 applications:
 - name: HelloHackathon
   buildpack: https://github.com/ryandotsmith/null-buildpack
+  command: start HelloHackathon
   memory: 1024M
   host: CM
