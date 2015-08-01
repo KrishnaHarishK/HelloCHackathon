@@ -1,4 +1,4 @@
-END_TARGET1  = HelloHackathon
+END_TARGET1  = ./HelloHackathon
 END_TARGET2  = test
 
 SOURCE_TARGETS1 =                \
@@ -27,7 +27,7 @@ EXTRA_CLDFLAGS          = --fatal-warnings
 
 $(END_TARGET1): $(SOURCE_TARGETS1) $(TARGET_LIBS)
 	@/bin/echo "";
-	$(CXX) $(LDFLAGS) $(DEFINES) -z muldefs -o $(END_TARGET1) $(SOURCE_TARGETS1) 2>&1 | tee -a error.lst
+	$(CXX) $(LDFLAGS) $(DEFINES) -z muldefs -o $(END_TARGET1) $(SOURCE_TARGETS1) 2>&1 | tee -a error.lst; chmod 775 $(END_TARGET1)
 	@/bin/echo ""; /bin/echo $(END_TARGET1) linked.
 
 $(END_TARGET2): $(SOURCE_TARGETS2) $(TARGET_LIBS)
