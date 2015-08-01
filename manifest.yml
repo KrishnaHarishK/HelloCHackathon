@@ -1,5 +1,6 @@
 ---
 applications:
 - name: HelloHackathon
+  buildpack: null_buildpack
   memory: 1024M
   host: CM
