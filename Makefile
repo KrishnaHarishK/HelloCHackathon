@@ -1,4 +1,4 @@
-END_TARGET1  = ./HelloHackathon
+END_TARGET1  = ./HelloHackathon.sh
 END_TARGET2  = test
 
 SOURCE_TARGETS1 =                \

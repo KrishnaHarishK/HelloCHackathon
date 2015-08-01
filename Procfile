@@ -1,1 +1,1 @@
-web: HelloHackathon
+web: ./HelloHackathon.sh
