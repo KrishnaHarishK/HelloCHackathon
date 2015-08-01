@@ -26,5 +26,5 @@ tags:  $(SOURCE_TARGETS) $(TARGET_LIBS)
 
 $(END_TARGET): $(SOURCE_TARGETS) $(TARGET_LIBS)
 	@/bin/echo "";
-	set -o pipefail; $(CXX) $(LDFLAGS) $(DEFINES) -z muldefs -o $(END_TARGET) $(SOURCE_TARGETS) 2>&1 | tee -a error.lst
+	$(CXX) $(LDFLAGS) $(DEFINES) -z muldefs -o $(END_TARGET) $(SOURCE_TARGETS) 2>&1 | tee -a error.lst
 	@/bin/echo ""; /bin/echo $(END_TARGET) linked.
