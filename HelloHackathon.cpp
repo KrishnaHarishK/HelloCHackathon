@@ -12,8 +12,12 @@ using namespace std;
 int
 main (int argc, char* argv[])
 {
-	std::cout << "Hello Hackathon!!!" << endl;
-	std::cout << "Hello Hackathon!!!" << endl;
+	while (1)
+	{
+		std::cout << "Hello Hackathon!!!" << endl;
+		std::cout << "Hello Hackathon!!!" << endl;
+		sleep (2);
+	}
 
 	return 0;
 }
