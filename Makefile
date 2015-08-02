@@ -17,7 +17,7 @@ SOURCE_TARGETS2 = \
 
 EXTRA_INCLUDES = -I./gtest-1.6.0/include
 
-END_TARGET1 = ./HelloHackathon.sh
+END_TARGET1 = HelloHackathon.sh
 END_TARGET2 = test
 
 include app.mak
