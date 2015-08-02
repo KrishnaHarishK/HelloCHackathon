@@ -12,7 +12,8 @@ SOURCE_TARGETS1 = \
 	CompareRecords.o
 
 SOURCE_TARGETS2 = \
-	HelloHackathon_test.o
+	HelloHackathon_test.o \
+	GenerateCSV.o
 
 EXTRA_INCLUDES = -I./gtest-1.6.0/include
 
@@ -26,7 +27,7 @@ $(END_TARGET1) : $(SOURCE_TARGETS1) $(TARGET_LIBS)
 	/bin/echo "$(END_TARGET1) linked"
 	
 $(END_TARGET2) : $(SOURCE_TARGETS2) $(TARGET_LIBS)
-	g++ -z muldefs -o $(END_TARGET2) $(SOURCE_TARGETS2) -L./gtest-1.6.0/lib -lgtest
+	g++ -z muldefs -o $(END_TARGET2) $(SOURCE_TARGETS2) -L./gtest-1.6.0/lib -lgtest -lrt -lm -lglib
 	/bin/echo "$(END_TARGET2) linked"
 
 include $(DEPEND_KLUDGE)
