@@ -7,6 +7,7 @@
 #include <string>
 #include <map>
 #include <set>
+#include <cstring>
 
 /**
  * The base class for records.  It takes a string and parses itself out of it.
