@@ -21,14 +21,14 @@
 
 void GenerateCSV (char* const);
 
-uint32_t gl_KeyCount_First   = 0,
-         gl_KeyCount_Second  = 0,
-         gl_DupCount_First   = 0,
-         gl_DupCount_Second  = 0,
-         gl_MatchedCount     = 0,
-         gl_UnMatched_First  = 0,
-         gl_UnMatched_Second = 0,
-         gl_MatchedWDiff     = 0;
+int unsigned gl_KeyCount_First   = 0,
+             gl_KeyCount_Second  = 0,
+             gl_DupCount_First   = 0,
+             gl_DupCount_Second  = 0,
+             gl_MatchedCount     = 0,
+             gl_UnMatched_First  = 0,
+             gl_UnMatched_Second = 0,
+             gl_MatchedWDiff     = 0;
 
 #include "FileReader.hh"
 #include "FixedRecord.hh"
