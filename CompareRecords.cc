@@ -98,10 +98,10 @@ main(int argc, char ** argv)
 
         CompareRecordApp tApplication (tArguments);
 
-        char *p_outfile = g_strdup_printf ("%s_Comparison.txt", tArguments[2]),
+        char *p_outfile = g_strdup_printf ("%s_Comparison.txt", tArguments[2].c_str ()),
              *p_destfile = g_strdup_printf ("%d_%s_Comparison.txt",
             		                        l_iterCompSuite->first,
-            		                        tArguments[2]);
+            		                        tArguments[2].c_str ());
         if (isFile(p_outfile))
         {
         	rename (p_outfile, p_destfile);
