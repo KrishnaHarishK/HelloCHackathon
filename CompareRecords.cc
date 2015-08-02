@@ -15,7 +15,7 @@
 
 char* const p_comparefile = ".compare";
 
-typedef std::map<uint32_t,std::string> CompSuite;
+typedef std::map<unsigned int,std::string> CompSuite;
 
 CompSuite gl_mapCompSuite;
 
@@ -27,7 +27,7 @@ parse_dot_compare_file (void)
   if (ifs.is_open ())
   {
     std::string s_line = "";
-    uint32_t l_counter = 0;
+    unsigned int l_counter = 0;
 
     while (getline (ifs, s_line))
     {
