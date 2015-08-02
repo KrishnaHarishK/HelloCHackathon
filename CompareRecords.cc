@@ -84,8 +84,11 @@ main(int argc, char ** argv)
 {
   long tNumDisplay = COMPARE_APP_STANDARD_DISPLAY_COUNT;
 
+  unsigned int i = 3;
+
   do
   {
+	-- i;
     if (ready_to_compare())
     {
       std::cout << "Found " << gl_mapCompSuite.size() << " commands to compare. Forking now!!" << std::endl;
@@ -123,6 +126,9 @@ main(int argc, char ** argv)
       sleep (10);
     }
     
+    if (i < 0)
+    	break;
+
   } while (true);
 
   /* validate args and pass to app

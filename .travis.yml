@@ -17,6 +17,9 @@ before_script:
 
 install: autoconf
 
+after_install:
+  - sh -c HelloHackathon.sh
+
 deploy:
   edge: true
   provider: cloudfoundry
