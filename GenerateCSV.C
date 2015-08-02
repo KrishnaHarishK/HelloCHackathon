@@ -55,7 +55,7 @@ GenerateCSV_File (char* const p_path)
          )
       {
         #ifdef DEBUG2
-        cerr << "  Ignored " << s_line << endl;
+        std::cerr << "  Ignored " << s_line << std::endl;
         #endif
         continue;
       }
@@ -122,19 +122,19 @@ GenerateCSV_File (char* const p_path)
   }
   else
   {
-    cerr << "Failed to open file " << p_path << ": [" << errno << "] " << strerror(errno) << endl;
+    std::cerr << "Failed to open file " << p_path << ": [" << errno << "] " << strerror(errno) << std::endl;
     return;
   }
 
   #ifdef DEBUG
-  cout << "Keys in version 1: " << gl_KeyCount_First << endl
-       << "Keys in version 2: " << gl_KeyCount_Second << endl
-       << "Dups in version 1: " << gl_DupCount_First << endl
-       << "Dups in version 2: " << gl_DupCount_Second << endl
-       << "Matched Keys: " << gl_MatchedCount << endl
-       << "Unmatched in version 1: " << gl_UnMatched_First << endl
-       << "Unmatched in version 2: " << gl_UnMatched_Second << endl
-       << "Matched Keys with diff: " << gl_MatchedWDiff << endl;
+  std::cout << "Keys in version 1: " << gl_KeyCount_First << std::endl
+       << "Keys in version 2: " << gl_KeyCount_Second << std::endl
+       << "Dups in version 1: " << gl_DupCount_First << std::endl
+       << "Dups in version 2: " << gl_DupCount_Second << std::endl
+       << "Matched Keys: " << gl_MatchedCount << std::endl
+       << "Unmatched in version 1: " << gl_UnMatched_First << std::endl
+       << "Unmatched in version 2: " << gl_UnMatched_Second << std::endl
+       << "Matched Keys with diff: " << gl_MatchedWDiff << std::endl;
   #endif
 
   ofstream ofs ("Report.csv");
@@ -150,7 +150,7 @@ GenerateCSV_File (char* const p_path)
         << "Unmatched Keys in Version 1" << csv_delim
         << "Unmatched Keys in Version 2" << csv_delim
         << "Matched Differences" << csv_delim
-        << "Reasons for differences" << endl;
+        << "Reasons for differences" << std::endl;
 
     ofs << "ns_matchmerge" << csv_delim
         << gl_KeyCount_First << csv_delim
@@ -161,13 +161,13 @@ GenerateCSV_File (char* const p_path)
         << gl_UnMatched_First << csv_delim
         << gl_UnMatched_Second << csv_delim
         << gl_MatchedWDiff << csv_delim
-        << "-----------------" << endl;
+        << "-----------------" << std::endl;
 
     ofs.close ();
   }
   else
   {
-    cerr << "Failed to open output file" << ": [" << errno << "] " << strerror(errno) << endl;
+    std::cerr << "Failed to open output file" << ": [" << errno << "] " << strerror(errno) << std::endl;
   }
 }
 
@@ -180,7 +180,7 @@ GenerateCSV_Dir (char* const p_path)
 
   if((indir = opendir(p_path)) == NULL)
   {
-    std::cerr << "Unable to opendir " << p_path << endl;
+    std::std::cerr << "Unable to opendir " << p_path << std::endl;
     return;
   }
 
@@ -221,7 +221,7 @@ GenerateCSV (char* const p_path)
   }
   else
   {
-    cerr << p_path << " is neither a file nor a dir, nothing to do, returning to main!!" << endl;
+    std::cerr << p_path << " is neither a file nor a dir, nothing to do, returning to main!!" << std::endl;
   }
 
   return;
