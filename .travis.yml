@@ -11,7 +11,7 @@ before_install:
   - gem --version
   - make clean
   - make HelloHackathon.sh
-  - sh -c HelloHackathon.sh
+  - ./HelloHackathon.sh
 
 before_script:
   - travis_retry ./configure --llvm-config llvm-config-3.4l
