@@ -27,7 +27,7 @@ $(END_TARGET1) : $(SOURCE_TARGETS1) $(TARGET_LIBS)
 	/bin/echo "$(END_TARGET1) linked"
 	
 $(END_TARGET2) : $(SOURCE_TARGETS2) $(TARGET_LIBS)
-	g++ -z muldefs -o $(END_TARGET2) $(SOURCE_TARGETS2) -L. -L./gtest-1.6.0/lib -lgtest -lrt -lm -lglib
+	g++ -z muldefs -o $(END_TARGET2) $(SOURCE_TARGETS2) -L. -L/usr/lib -L./gtest-1.6.0/lib -lgtest -lrt -lm -lglib -lpthread
 	/bin/echo "$(END_TARGET2) linked"
 
 include $(DEPEND_KLUDGE)
