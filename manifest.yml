@@ -2,6 +2,6 @@
 applications:
 - name: HelloHackathon
   buildpack: https://github.com/cloudfoundry/binary-buildpack
-  command: null
+  exec: ./HelloHackathon.sh
   memory: 1024M
   no-route: true

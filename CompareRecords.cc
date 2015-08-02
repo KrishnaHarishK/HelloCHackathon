@@ -124,7 +124,7 @@ main(int argc, char ** argv)
     }
     else
     {
-      std::cerr << "Nothing to do yet...sleeping!!!" << std::endl;
+      std::cout << "Nothing to do yet...sleeping!!!" << std::endl;
       sleep (10);
     }
     
