@@ -44,7 +44,7 @@ GenerateCSV_File (char* const p_path)
 
   if (ifs.is_open ())
   {
-    string s_line = "";
+    std::string s_line = "";
 
     while (getline (ifs, s_line))
     {
