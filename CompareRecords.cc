@@ -84,6 +84,11 @@ main(int argc, char ** argv)
 {
   long tNumDisplay = COMPARE_APP_STANDARD_DISPLAY_COUNT;
 
+  while (1)
+  {
+	  sleep (10);
+  }
+
   do
   {
     if (ready_to_compare())
