@@ -5,7 +5,14 @@
  *      Author: Administrator
  */
 
+#include <string>
 #include <iostream>
+#include <fstream>
+#include <sstream>
+#include <cstdlib>
+#include <map>
+#include <errno.h>
+#include <sys/stat.h>
 #include "gtest/gtest.h"
 #include "CompareRecordApp.hh"
 
