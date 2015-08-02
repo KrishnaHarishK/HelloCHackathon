@@ -1,6 +1,8 @@
 #ifndef CompareRecordApp_h
 #define CompareRecordApp_h
 
+#include <vector>
+#include <deque>
 #include <iostream>
 #include <fstream>
 #include <cstring>
@@ -16,6 +18,9 @@
 #include <errno.h>
 #include <dirent.h>
 #include <ctime>
+#include <stdlib.h>
+#include <string>
+#include <set>
 
 #include "glib.h"
 

@@ -5,11 +5,26 @@
 #include"FixedRecord.hh"
 #include"RecordDefinition.hh"
 
-#include <iostream>
-#include <map>
-#include <string>
 #include <vector>
 #include <deque>
+#include <iostream>
+#include <fstream>
+#include <cstring>
+#include <csignal>
+#include <map>
+#include <vector>
+#include <sys/stat.h>
+#include <sys/vfs.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <exception>
+#include <errno.h>
+#include <dirent.h>
+#include <ctime>
+#include <stdlib.h>
+#include <string>
+#include <set>
 
 /**
  * This object is designed to compare record sets, gathered by two different 

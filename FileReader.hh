@@ -4,10 +4,26 @@
 #include "FixedRecord.hh"
 #include "RecordDefinition.hh"
 
-#include<iostream>
-#include<fstream>
-#include<map>
-#include<vector>
+#include <vector>
+#include <deque>
+#include <iostream>
+#include <fstream>
+#include <cstring>
+#include <csignal>
+#include <map>
+#include <vector>
+#include <sys/stat.h>
+#include <sys/vfs.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <exception>
+#include <errno.h>
+#include <dirent.h>
+#include <ctime>
+#include <stdlib.h>
+#include <string>
+#include <set>
 
 /**
  * This class takes a record type as a template parameter.  It can be used

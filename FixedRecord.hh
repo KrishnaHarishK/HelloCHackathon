@@ -4,6 +4,8 @@
 #include "RecordDefinition.hh"
 #include "RecordBase.hh"
 
+#include <vector>
+#include <deque>
 #include <iostream>
 #include <fstream>
 #include <cstring>
