@@ -40,7 +40,7 @@ GenerateCSV_File (char* const p_path)
 	  return;
   }
 
-  ifstream ifs (p_path);
+  std::ifstream ifs (p_path);
 
   if (ifs.is_open ())
   {
@@ -137,7 +137,7 @@ GenerateCSV_File (char* const p_path)
        << "Matched Keys with diff: " << gl_MatchedWDiff << std::endl;
   #endif
 
-  ofstream ofs ("Report.csv");
+  std::ofstream ofs ("Report.csv");
 
   if (ofs.is_open ())
   {
