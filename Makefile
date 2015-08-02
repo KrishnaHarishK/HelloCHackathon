@@ -17,7 +17,7 @@ SOURCE_TARGETS2 = \
 
 EXTRA_INCLUDES = -I./gtest-1.6.0/include
 
-END_TARGET1 = HelloHackathon.sh
+END_TARGET1 = ./HelloHackathon.sh
 END_TARGET2 = test
 
 include app.mak
@@ -28,6 +28,6 @@ $(END_TARGET1) : $(SOURCE_TARGETS1) $(TARGET_LIBS)
 	
 $(END_TARGET2) : $(SOURCE_TARGETS2) $(TARGET_LIBS)
 	g++ -z muldefs -o $(END_TARGET2) $(SOURCE_TARGETS2) -L. -L/usr/lib -L./gtest-1.6.0/lib -lgtest -lrt -lm -lglib -lpthread
-	/bin/echo "$(END_TARGET2) linked"
+	@/bin/echo "$(END_TARGET2) linked"
 
 include $(DEPEND_KLUDGE)
