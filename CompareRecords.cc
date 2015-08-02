@@ -9,8 +9,6 @@
 #include <errno.h>
 #include <sys/stat.h>
 
-#include "glib.h"
-
 #define COMPARE_APP_STANDARD_DISPLAY_COUNT 10
 
 char* const p_comparefile = ".compare";
@@ -101,19 +99,18 @@ main(int argc, char ** argv)
 
         CompareRecordApp tApplication (tArguments);
 
-        char *p_outfile = g_strdup_printf ("%s_Comparison.txt", tArguments[2].c_str ()),
-             *p_destfile = g_strdup_printf ("%d_%s_Comparison.txt",
-            		                        l_iterCompSuite->first,
-            		                        tArguments[2].c_str ());
+        char p_outfile[PATH_MAX] = {0};
+        char p_destfile[PATH_MAX] = {0};
+
+        sprintf (p_outfile, "%s_Comparison.txt", tArguments[2].c_str ());
+        sprintf (p_destfile, "%d_%s_Comparison.txt",l_iterCompSuite->first,tArguments[2].c_str ());
+
         if (isFile(p_outfile))
         {
         	rename (p_outfile, p_destfile);
         }
 
         ++ l_iterCompSuite;
-
-        free (p_outfile);
-        free (p_destfile);
       }
 
       unlink (p_comparefile);

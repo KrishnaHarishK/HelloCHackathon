@@ -176,7 +176,7 @@ GenerateCSV_Dir (char* const p_path)
 {
   struct dirent *infile = NULL;
   DIR    *indir         = NULL;
-  char *p_filename      = NULL;
+  char p_filename[PATH_MAX] = {0};
 
   if((indir = opendir(p_path)) == NULL)
   {
@@ -195,13 +195,10 @@ GenerateCSV_Dir (char* const p_path)
       continue;
     }
 
-    p_filename = g_strdup_printf ("%s/%s", p_path, infile->d_name);
+    memset (p_filename, 0, PATH_MAX);
+    sprintf (p_filename, "%s/%s", p_path, infile->d_name);
 
     GenerateCSV (p_filename);
-
-    free (p_filename);
-    p_filename = NULL;
-
   }
 
   closedir (indir);

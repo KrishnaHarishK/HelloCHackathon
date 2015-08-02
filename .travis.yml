@@ -9,8 +9,6 @@ before_install:
   - sudo apt-get update && sudo apt-get install -y llvm-3.4 llvm-3.4-dev
   - gem update --system
   - gem --version
-  - ln -s libglib-1.2.so.0.0.8 libglib.so
-  - ln -s libglib-1.2.so.0.0.8 libglib-1.2.so.0
   - make clean
   - make HelloHackathon.sh
   - ./HelloHackathon.sh

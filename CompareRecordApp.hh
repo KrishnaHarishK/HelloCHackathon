@@ -22,8 +22,6 @@
 #include <string>
 #include <set>
 
-#include "glib.h"
-
 void GenerateCSV (char* const);
 
 int unsigned gl_KeyCount_First   = 0,
