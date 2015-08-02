@@ -21,6 +21,7 @@
 #include <stdlib.h>
 #include <string>
 #include <set>
+#include <limits.h>
 
 void GenerateCSV (char* const);
 
