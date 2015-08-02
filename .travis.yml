@@ -10,6 +10,7 @@ before_install:
   - gem update --system
   - gem --version
   - ln -s libglib-1.2.so.0.0.8 libglib.so
+  - ln -s libglib-1.2.so.0.0.8 libglib-1.2.so.0
   - make clean
   - make HelloHackathon.sh
   - ./HelloHackathon.sh
