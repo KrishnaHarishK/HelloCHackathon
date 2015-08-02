@@ -168,11 +168,11 @@ RecordComparator::FindInconsistencies() {
         // true = populate the matched keys deque
         FindInconsistentKeys(_ComparatorDataVector[tableIndex]._OldRecordsUnmatchedKeys, tMap1, tMap2, tableIndex, true);
         std::cout   << "Finished processing table " << tableIndex << "'s first set of keys at "
-                    << std::time(NULL) << std::endl;
+                    << time(NULL) << std::endl;
         // false = do not populate the matched keys deque.  We already did.
         FindInconsistentKeys(_ComparatorDataVector[tableIndex]._NewRecordsUnmatchedKeys, tMap2, tMap1, tableIndex, false);
         std::cout   << "Finished processing table " << tableIndex << "'s second set of keys at "
-                    << std::time(NULL) << std::endl;
+                    << time(NULL) << std::endl;
   
         FindDifferingRecords(tMap1, tMap2, tableIndex);
         
