@@ -180,7 +180,7 @@ GenerateCSV_Dir (char* const p_path)
 
   if((indir = opendir(p_path)) == NULL)
   {
-    std::std::cerr << "Unable to opendir " << p_path << std::endl;
+    std::cerr << "Unable to opendir " << p_path << std::endl;
     return;
   }
 
