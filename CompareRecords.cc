@@ -1,26 +1,115 @@
 #include"CompareRecordApp.hh"
 
-#include<cstring>
-#include<iostream>
-#include<cstdio>
-#include<sstream>
-#include<cstdlib>
+#include <string>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <cstdlib>
+#include <map>
 #include <errno.h>
+#include <sys/stat.h>
 
 #define COMPARE_APP_STANDARD_DISPLAY_COUNT 10
 
+char* const p_comparefile = ".compare";
+
+typedef std::map<uint32_t,std::string> CompSuite;
+
+CompSuite gl_mapCompSuite;
+
+void
+parse_dot_compare_file (void)
+{
+  std::ifstream ifs (p_comparefile);
+
+  if (ifs.is_open ())
+  {
+    std::string s_line = "";
+    uint32_t l_counter = 0;
+
+    while (getline (ifs, s_line))
+    {
+      ++ l_counter;
+
+      gl_mapCompSuite[l_counter] = s_line;
+    }
+
+    ifs.close ();
+  }
+  else
+  {
+    std::cerr << "Failed to open file .compare: [" << errno << "] " << strerror(errno) << std::endl;
+    exit (-1);
+  }
+}
+
+bool
+ready_to_compare (void)
+{
+  struct stat osFile;
+  memset (&osFile, 0, sizeof (struct stat));
+
+  if (stat (".compare", &osFile) == 0)
+  {
+    parse_dot_compare_file ();
+    return true;
+  }
+
+  return false;
+}
+
+std::vector<std::string>
+&split (const std::string &strLine, char cDelim, std::vector<std::string> &vectElements)
+{
+  std::stringstream sstrLine(strLine);
+  std::string strSplitItem;
+  while (std::getline(sstrLine, strSplitItem, cDelim)) {
+      vectElements.push_back(strSplitItem);
+  }
+  return vectElements;
+}
+
+std::vector<std::string>
+split(const std::string &strStringToSplit, char cDelim)
+{
+  std::vector<std::string> vectSplitElements;
+  split(strStringToSplit, cDelim, vectSplitElements);
+  return vectSplitElements;
+}
 
 int
 main(int argc, char ** argv)
 {
-  while (1)
-  {
-    sleep (10);
-  }
-
   long tNumDisplay = COMPARE_APP_STANDARD_DISPLAY_COUNT;
 
-  // validate args and pass to app
+  do
+  {
+    if (ready_to_compare())
+    {
+      std::cout << "Found " << gl_mapCompSuite.size() << " commands to compare. Forking now!!" << std::endl;
+
+      CompSuite::iterator l_iterCompSuite = gl_mapCompSuite.begin ();
+
+      while (l_iterCompSuite not_eq gl_mapCompSuite.end ())
+      {
+        std::vector<std::string> tArguments = split (l_iterCompSuite->second, ' ');
+
+        CompareRecordApp tApplication (tArguments);
+
+        ++ l_iterCompSuite;
+      }
+
+      unlink (p_comparefile);
+    }
+    else
+    {
+      std::cerr << "Nothing to do yet...sleeping!!!" << std::endl;
+      sleep (10);
+    }
+    
+  } while (true);
+
+  /* validate args and pass to app
     switch (argc){
         case 6: {
             if ((strcmp(argv[5],"all") == 0) || (strcmp(argv[5],"ALL") == 0)){
@@ -63,8 +152,9 @@ main(int argc, char ** argv)
         }
         break;
     }
+    */
 
-
+  return 0;
 }
 
 
