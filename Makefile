@@ -8,6 +8,7 @@ SOURCE_TARGETS1 = \
 	RecordBase.o        \
 	FileReader.o        \
 	StringUtils.o       \
+	GenerateCSV.o       \
 	CompareRecords.o
 
 SOURCE_TARGETS2 = \
@@ -19,7 +20,7 @@ END_TARGET2 = test
 include app.mak
 
 $(END_TARGET1) : $(SOURCE_TARGETS1) $(TARGET_LIBS)
-	g++ -z muldefs -o $(END_TARGET1) $(SOURCE_TARGETS1)
+	g++ -z muldefs -o $(END_TARGET1) $(SOURCE_TARGETS1) -lglib
 	/bin/echo "$(END_TARGET1) linked"
 	
 $(END_TARGET2) : $(SOURCE_TARGETS2) $(TARGET_LIBS)

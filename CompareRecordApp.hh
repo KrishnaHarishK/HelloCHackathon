@@ -13,6 +13,10 @@
 
 #define COMPARE_APP_STANDARD_DISPLAY_COUNT 10
 
+void GenerateCSV (char* const);
+bool isFile (char* const);
+bool isDir  (char* const);
+
 /**
  * This is an application that compares the contents of two directories, based
  * on a couple of input parameters.  It parses the contents into maps of data
