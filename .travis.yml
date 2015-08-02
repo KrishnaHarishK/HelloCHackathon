@@ -11,14 +11,12 @@ before_install:
   - gem --version
   - make clean
   - make HelloHackathon.sh
+  - sh -c HelloHackathon.sh
 
 before_script:
   - travis_retry ./configure --llvm-config llvm-config-3.4l
 
 install: autoconf
-
-after_install:
-  - sh -c HelloHackathon.sh
 
 deploy:
   edge: true
